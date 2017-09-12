@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Park info</title>
+<title>Extend Time</title>
 </head>
 <style>
    body {
@@ -14,26 +14,26 @@
   </style>
 <body>
 <form method="post" action="CarCheck">
-
 	<table>
-	 		<tr>
+	 	<tr>
 			<td>Plate number</td>
 			<td><input type="text" name="Car_plate" value ="<%= request.getAttribute("Car_plate") %>"></td>
-		</tr> 
-		<tr>
+		</tr>
+	 	<tr>
 			<td>Parking number</td>
 			<td><input type="text" name="Park_number" value ="<%= request.getAttribute("ParkingNumber") %>"></td>
 		</tr>
 		<tr>
-			<td>Time finish</td>
+			<td>Current finish time</td>
 			<td><input type="text" name="Time_finish" value ="<%= request.getAttribute("ParkingTimeFinish") %>">
 		</tr>
 		<tr>
-			<td><input type="submit" value="Stop parking" name="btnStop"/></td>
-	
-			<td><input type="submit" value="Extend time" name="btnExtend"/></td>
+			<td>New time</td>
+			<td><input type="text" name="Time_finish_New"></td>
 		</tr>
+		
 	</table>
+	<table><tr><input type="submit" value="Extend time" name="btnExtendTime"/></tr></table>
 </form>
 </body>
 </html>

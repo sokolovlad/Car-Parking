@@ -16,6 +16,24 @@
   	<description></description>
   	<servlet-class>dbAccess.CarCheck</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CarInfo</servlet-name>
+  	<display-name>CarInfo</display-name>
+  	<description></description>
+  	<servlet-class>CarInfo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Car_info</servlet-name>
+  	<display-name>Car_info</display-name>
+  	<description></description>
+  	<servlet-class>dbAccess.Car_info</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Car_Info</servlet-name>
+  	<display-name>Car_Info</display-name>
+  	<description></description>
+  	<servlet-class>dbAccess.Car_Info</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>DBConnect</servlet-name>
   	<url-pattern>/DBConnect</url-pattern>
@@ -23,5 +41,17 @@
   <servlet-mapping>
   	<servlet-name>CarCheck</servlet-name>
   	<url-pattern>/CarCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CarInfo</servlet-name>
+  	<url-pattern>/CarInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Car_info</servlet-name>
+  	<url-pattern>/Car_info</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Car_Info</servlet-name>
+  	<url-pattern>/Car_Info</url-pattern>
   </servlet-mapping>
 </web-app>

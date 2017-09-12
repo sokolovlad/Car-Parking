@@ -41,8 +41,78 @@ public class DBConnect {
 		return false;
 	}
 	
+	public String getparknumber(String Plate_number ) {
+		PreparedStatement myStmt = null; 
+		ResultSet myRS = null;
+		
+		try {
+			myStmt = myConn.prepareStatement("select * from car where Plate_number=?  ");
+			myStmt.setString(1, Plate_number);
+		/*	myStmt.setString(2, password);*/
+			myRS = myStmt.executeQuery();
+			
+			if(myRS.next()) {
+				return myRS.getString(2);
+			}
+			else {
+				return "";
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return "";
+	}
 	
+	public String getTimeFinish(String Plate_number ) {
+	PreparedStatement myStmt = null; 
+	ResultSet myRS = null;
 	
+	try {
+		myStmt = myConn.prepareStatement("select * from car where Plate_number=?  ");
+		myStmt.setString(1, Plate_number);
+		//myStmt.setString(2, password);
+		myRS = myStmt.executeQuery();
+		
+		if(myRS.next()) {
+			return myRS.getString(4);
+		}
+		else {
+			return "";
+		}
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+	return "";
+	}
+//Update Extend time
+	public void ExtendTime(String Plate_number, String Time_finish_New) {
+		PreparedStatement myStmt = null; 
+		int myRS = 0;
+		try {
+			myStmt = myConn.prepareStatement("update car set Time_stop=? where Plate_number=?");
+			myStmt.setString(1, Time_finish_New);
+			myStmt.setString(2, Plate_number);
+			myRS = myStmt.executeUpdate();
+	}	catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+//Update Stop
+	public void StopParking(String Plate_number) {
+		PreparedStatement myStmt = null; 
+		int myRS = 0;
+		try {
+			myStmt = myConn.prepareStatement("delete from car where Plate_number=?");
+			myStmt.setString(1, Plate_number);
+			myRS = myStmt.executeUpdate();
+	}	catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	public static void main(String[] args) {
 		try {
 			DBConnect sampleObj = new DBConnect();
@@ -61,49 +131,3 @@ public class DBConnect {
 		}
 	}	
 }
-
-
-
-
-
-
-
-
-
-/*import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;*/
-
-/**
- * Servlet implementation class DBConnect
- *//*
-public class DBConnect extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    *//**
-     * @see HttpServlet#HttpServlet()
-     *//*
-    public DBConnect() {b
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	*//**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 *//*
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	*//**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 *//*
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-}*/
