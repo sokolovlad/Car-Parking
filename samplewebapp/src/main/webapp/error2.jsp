@@ -4,36 +4,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>Stop</title>
 </head>
 	<style>
    body {
     background: #F0FFF0; /* fone colour */
     color: #778899; /* text colour */
    }
-  </style>
+  	</style>
 <body>
-
-	<form method="post" action="CarCheck">
+<form method="post">
+	<strong><font size="7">Car already parked. Check the time</font></strong>
 	<table>
-		
-		<tr>		
-			<td>Car plate number</td>
-			<td><input type="text" name="Car_plate"></td>
-		</tr>
-		
 		<tr>
 				<td>
-			<input type="submit" value="Park" name="btnPark_login"/>
-				</td>
+			<input type="submit" value="OK"
+			onclick="document.forms[0].action = 'login.jsp'; return true;"/>
+				</td>			
 				
-				<td>
-			<input type="submit" value="Check time" name="btnCheck"/>
-				</td>		
 		</tr> 
-		
-	</table>	
-	</form>
-	
+	</table>
+</form>
 </body>
-</html> 
+</html>
