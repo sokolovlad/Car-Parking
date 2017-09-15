@@ -8,10 +8,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+//import java.text.SimpleDateFormat;
+//import java.time.LocalTime;
+//import java.util.Calendar;
+//import java.util.Scanner;
 
 public class CarCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+//	static int timeToPark = 0;
 	
 	private DBConnect newConnection;
        
@@ -33,7 +37,24 @@ public class CarCheck extends HttpServlet {
 		String Time_finish_New = request.getParameter("Time_finish_New") ;
 		String Parking_Number = request.getParameter("Parking_number") ;
 		String Park_Number = request.getParameter("Park_number") ;
+//		String starttime
 		
+//		public static String starttime() {
+//			Calendar cal = Calendar.getInstance();
+//			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+//			return sdf.format(cal.getTime());
+//		}
+//		
+//		public static String endTime(int minutesToPark) {
+//			timeToPark = minutesToPark;
+//			
+//			LocalTime lt = LocalTime.parse(startTime());
+//			LocalTime ltLater = null;
+//			String endTime = null;
+//			ltLater = lt.plusMinutes(minutesToPark);
+//			endTime = ltLater.toString();
+//			return endTime;
+//		}		
 		
 		//---for login page Button Check time .jsp
 		if(btnCheck!=null) {
@@ -184,5 +205,9 @@ public class CarCheck extends HttpServlet {
 					}
 				}	
 	
+	}
+	private void starttime() {
+		// TODO Auto-generated method stub
+		
 	}
 }
